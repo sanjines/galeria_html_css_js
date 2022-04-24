@@ -91,24 +91,26 @@ const menu = [{
 ];
 
 
-//- CASO DE USO 1 PRACTICA NELO
 const foodGalleryMenu = () => {
+  //- CASO DE USO 2 PRACTICA NELO
 
-  menu.forEach((key) => {
-    document.querySelector('#js-container').insertAdjacentHTML('beforeend', `
-    <article class='menu-food'>
-        <img src=${key.img} alt=${key.alt} class="menu-food__image" />
-      <div>
-        <header class= 'menu-food__info'>
-          <h4 class='menu-food__title'>${key.title}</h4>
-          <h4 class='menu-food__price'>${key.price}</h4>
-        </header>
-        <p class="menu-food__description">
-          ${key['desc']}
-        </p>
-      </div>
-    </article>`)
-  });
+  let $container = document.querySelector('#js-container');
+  let $template = document.querySelector('#template').content;
+  let $fragment = document.createDocumentFragment();
+
+  menu.forEach((item) => {
+    $template.querySelector('.menu-food__image').setAttribute('src', item.img);
+    $template.querySelector('.menu-food__image').setAttribute('alt', item.alt);
+    $template.querySelector('.menu-food__title').textContent = item.title;
+    $template.querySelector('.menu-food__price').textContent = item.price;
+    $template.querySelector('.menu-food__description').textContent = item.desc;
+
+    let $clone = document.importNode($template, true);
+    $fragment.appendChild($clone);
+
+  })
+  $container.appendChild($fragment);
+
 }
 
 export default foodGalleryMenu;
