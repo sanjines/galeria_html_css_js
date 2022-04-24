@@ -153,3 +153,62 @@ p {
     line-height: 1;
   }
 }
+
+/*  ESTILOS DE LAYOUT */
+
+.l-container-center {
+  width:         90vw;
+  max-width:     1170px;
+  margin:        0 auto;
+  display:       grid;
+  gap:           3rem 2rem;
+  justify-items: center;
+}
+
+
+/*
+=============== 
+COMPONENTE MENU IMG
+===============
+*/
+
+.title {
+  text-align:    center;
+  margin-bottom: 2rem;
+}
+
+.underline {
+  width:        5rem;
+  height:       0.25rem;
+  background:   var(--clr-gold);
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+.menu {
+  display:   grid;
+  gap:       1rem 2rem;
+  max-width: 25rem;
+}
+
+.menu__image {
+  height:        200px;
+  object-fit:    cover;
+  border:        0.25rem solid var(--clr-gold);
+  border-radius: var(--radius);
+}
+
+.menu__info {
+  display:         flex;
+  justify-content: space-between;
+  border-bottom:   0.5px dotted var(--clr-grey-5);
+}
+
+.menu__price {
+  color: var(--clr-gold);
+}
+
+.menu__description {
+  margin-bottom: 0;
+  padding-top:   1rem;
+}
