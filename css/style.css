@@ -212,3 +212,28 @@ COMPONENTE MENU IMG
   margin-bottom: 0;
   padding-top:   1rem;
 }
+
+
+
+@media screen and (min-width: 768px) {
+  .menu {
+    max-width:             40rem;
+    grid-template-columns: 225px 1fr;
+    gap:                   0 1.25rem;
+  }
+
+  .menu__image {
+    height: 175px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .l-container-center {
+    width:                 95vw;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .menu__image {
+    height: 150px;
+  }
+}
