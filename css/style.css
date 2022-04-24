@@ -69,6 +69,15 @@ STILOS BASE
   box-sizing: border-box;
 }
 
+html {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: var(--ff-secondary);
   background:  var(--clr-grey-10);
@@ -165,17 +174,17 @@ p {
   justify-items: center;
 }
 
+.title {
+  padding:       1rem;
+  margin-bottom: 2rem;
+  text-align:    center;
+}
 
 /*
 =============== 
 COMPONENTE MENU IMG
 ===============
 */
-
-.title {
-  text-align:    center;
-  margin-bottom: 2rem;
-}
 
 .underline {
   width:        5rem;
@@ -185,26 +194,31 @@ COMPONENTE MENU IMG
   margin-right: auto;
 }
 
-.menu {
+.menu-food {
   display:   grid;
   gap:       1rem 2rem;
   max-width: 25rem;
 }
 
-.menu__image {
+.menu-food__image {
   height:        200px;
   object-fit:    cover;
   border:        0.25rem solid var(--clr-gold);
   border-radius: var(--radius);
 }
 
-.menu__info {
+.menu-food__info {
   display:         flex;
   justify-content: space-between;
   border-bottom:   0.5px dotted var(--clr-grey-5);
 }
 
-.menu__price {
+.item-food__title,
+.item-food__price {
+  margin-bottom: 0.5rem;
+}
+
+.menu-food__price {
   color: var(--clr-gold);
 }
 
@@ -213,16 +227,14 @@ COMPONENTE MENU IMG
   padding-top:   1rem;
 }
 
-
-
 @media screen and (min-width: 768px) {
-  .menu {
+  .menu-food {
     max-width:             40rem;
     grid-template-columns: 225px 1fr;
     gap:                   0 1.25rem;
   }
 
-  .menu__image {
+  .menu-food__image {
     height: 175px;
   }
 }
@@ -233,7 +245,7 @@ COMPONENTE MENU IMG
     grid-template-columns: 1fr 1fr;
   }
 
-  .menu__image {
+  .menu-food__image {
     height: 150px;
   }
 }
