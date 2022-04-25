@@ -91,24 +91,31 @@ const menu = [{
 ];
 
 
-//- CASO DE USO 1 PRACTICA NELO
 const foodGalleryMenu = () => {
+  //- CASO DE USO 3 PRACTICA NELO
 
-  menu.forEach((key) => {
-    document.querySelector('#js-container').insertAdjacentHTML('beforeend', `
-    <article class='menu-food'>
-        <img src=${key.img} alt=${key.alt} class="menu-food__image" />
-      <div>
-        <header class= 'menu-food__info'>
-          <h4 class='menu-food__title'>${key.title}</h4>
-          <h4 class='menu-food__price'>${key.price}</h4>
-        </header>
-        <p class="menu-food__description">
-          ${key['desc']}
-        </p>
-      </div>
-    </article>`)
+  const $container = document.querySelector('#js-container')
+  let displayMenu = menu.map((item) => {
+
+    return `<article class="menu-food">
+          <img src=${item.img} alt=${item.title} class="menu-food__image"/>
+          <div>
+            <header class= 'menu-food__info'>
+              <h4 class= 'menu-food__title' >${item.title}</h4>
+              <h4 class='menu-food__price'>$${item.price}</h4>
+            </header>
+            <p class='menu-food__description'>
+              ${item.desc}
+            </p>
+          </div>
+        </article>`;
+
   });
+
+  displayMenu = displayMenu.join('');
+
+  $container.innerHTML = displayMenu;
+
 }
 
 export default foodGalleryMenu;
